@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #date {
+        visibility: hidden;
+    }
+</style>
+<script>
+    function openPicker() {
+        let inputDate = document.getElementById('date');
+        inputDate.showPicker?.();
+    }
+    function onDateChange() {
+        const inputDate = document.getElementById('date');
+        const dateViewer = document.getElementById('dateViewer');
+        dateViewer.value = inputDate.value
+    }
+</script>
+
+<!-- fetch -->
+<!-- useEffect  -->
+<!-- routing -->
+
+<body>
+    <label for="date">
+        <div onclick="openPicker()">
+            My own label
+            <input value="" type="text" id="dateViewer" onclick="event.stopPropagation();"
+                onchange="event.preventDefault();return false;" />
+        </div>
+        <input type="date" name="" id="date" onchange="onDateChange(event)">
+        <input type="time" name=""  onchange="onDateChange(event)">
+    </label>
+</body>
+
+</html>
